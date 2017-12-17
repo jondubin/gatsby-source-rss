@@ -9,7 +9,7 @@ module.exports = {
                 {
                         resolve: 'gatsby-source-rss',
                         options: {
-                                rssURL: 'https://fancypants.io/rss.xml
+                                rssURL: 'https://fancypants.io/rss.xml'
                         }
                 },
         ]

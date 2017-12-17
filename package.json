@@ -1,11 +1,15 @@
 {
   "name": "gatsby-source-rss-fork",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gatsby source plugin for building websites using RSS feeds as a data source",
   "scripts": {
     "build": "babel src --out-dir .",
     "watch": "babel -w src --out-dir .",
     "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrioid/gatsby-source-rss.git"
   },
   "keywords": [
     "gatsby",
