@@ -54,8 +54,6 @@ async function sourceNodes({ boundActionCreators }, { rssURL }) {
 
   feedStory.internal = { type: 'rssFeed', contentDigest: createContentDigest(feedStory) };
 
-  console.log('creating', feedStory);
-
   createNode(feedStory);
 }
 
