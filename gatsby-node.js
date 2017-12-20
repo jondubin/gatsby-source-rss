@@ -18,7 +18,6 @@ const createChildren = (entries, parentId, createNode) => {
   const childIds = [];
   entries.forEach(entry => {
     childIds.push(entry.link);
-    console.log('entry', entry);
     const node = Object.assign({}, entry, {
       id: entry.link,
       title: entry.title,
@@ -38,12 +37,10 @@ const createChildren = (entries, parentId, createNode) => {
 
 async function sourceNodes({ boundActionCreators }, { rssURL }) {
   const { createNode } = boundActionCreators;
-  console.log('fetching rss feed');
   const data = await promisifiedParseURL(rssURL);
   if (!data) {
     return;
   }
-  // console.log('data from rss', data);
   const { title, description, link, entries } = data;
   const childrenIds = createChildren(entries, link, createNode);
   const feedStory = {
@@ -51,7 +48,6 @@ async function sourceNodes({ boundActionCreators }, { rssURL }) {
     title,
     description,
     link,
-    // children: [],
     parent: null,
     children: childrenIds
   };
@@ -61,9 +57,6 @@ async function sourceNodes({ boundActionCreators }, { rssURL }) {
   console.log('creating', feedStory);
 
   createNode(feedStory);
-
-  // Process data into nodes.
-  // data.forEach(datum => createNode(datum));
 }
 
 exports.sourceNodes = sourceNodes;
