@@ -7,6 +7,10 @@
     "watch": "babel -w src --out-dir .",
     "lint": "eslint src/"
   },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/jondubin/gatsby-source-rss.git"
+  },
   "keywords": [
     "gatsby",
     "gatsby-plugin",

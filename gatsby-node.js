@@ -16,7 +16,7 @@ function promisifiedParseURL(url) {
 
 const createChildren = (entries, parentId, createNode) => {
   const childIds = [];
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     childIds.push(entry.link);
     const node = Object.assign({}, entry, {
       id: entry.link,
@@ -24,11 +24,11 @@ const createChildren = (entries, parentId, createNode) => {
       link: entry.link,
       description: entry.description,
       parent: parentId,
-      children: [],
+      children: []
     });
     node.internal = {
       type: 'rssFeedItem',
-      contentDigest: createContentDigest(node),
+      contentDigest: createContentDigest(node)
     };
     createNode(node);
   });
@@ -49,7 +49,7 @@ async function sourceNodes({ boundActionCreators }, { rssURL }) {
     description,
     link,
     parent: null,
-    children: childrenIds,
+    children: childrenIds
   };
 
   feedStory.internal = { type: 'rssFeed', contentDigest: createContentDigest(feedStory) };
